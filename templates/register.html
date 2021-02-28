@@ -1,0 +1,145 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width-device-width initial-scale=1.0">
+    <title>Job Portal</title>
+    <style>
+       *{
+            margin:0;
+            padding:0;
+            box-sizing: border-box;
+         }
+      body{
+         min-height=100vh;
+         background=#eee;
+         display:flex;
+         font-family:sans-serif;
+          }
+      .container{
+        margin:auto;
+        width:500px;
+        max-width:90%;
+      }
+      .container form{
+      width: 100%;
+      height: 120%;
+      padding: 20px;
+      background: white;
+      border-radius: 4px;
+      box-shadow: 0 8px 16px rgba(0,0,0,.3);
+      }
+      .container form h1{
+      text-align:center;
+      margin-bottom: 24px;
+      color:#222;
+       }
+       .container form .form-control{
+        width:100%;
+        height:5%;
+        background:white;
+        border-radius:4px;
+        border:1px solid silver;
+        margin:10px 0 18px 0;
+        padding:0 10px;
+        }
+        .container form .btn{
+        margin-left:30%;
+        width: 50%;
+        height: 5%;
+        border: none;
+        outline:none;
+        background:#27a327;
+        cursor=pointer;
+        font-size=16px;
+        text-tranform:uppercase;
+        color:white;
+        border-radius:4px;
+        transistion: .3s;
+        }
+
+    </style>
+    <script>
+        <script>
+	    function validate_data() {
+		    var name = document.forms["RegForm"]["Name"];
+		    var email = document.forms["RegForm"]["EMail"];
+		    var phone = document.forms["RegForm"]["Telephone"];
+		    var password = document.forms["RegForm"]["Password"];
+		    var address = document.forms["RegForm"]["Address"];
+
+		if (name.value == "") {
+			window.alert("Please enter your name.");
+			name.focus();
+			return false;
+		}
+
+		if (address.value == "") {
+			window.alert("Please enter your address.");
+			address.focus();
+			return false;
+		}
+
+		if (email.value == "") {
+			window.alert( "Please enter a valid e-mail address.");
+			email.focus();
+			return false;
+		}
+
+		if (phone.value == "") {
+			window.alert("Please enter your telephone number.");
+			phone.focus();
+			return false;
+		}
+
+		if (password.value == "") {
+			window.alert("Please enter your password");
+			password.focus();
+			return false;
+		}
+		return true;
+	}
+</script>
+</head>
+<body>
+    <div class="container" >
+        <form action="{{ url_for('register') }}" method="POST" name="RegForm">
+            <h1>Register </h1>
+            <div class="form-group" id="email">
+                <label >Email </label>
+                <input type="text" class="form-control" name="email" required>
+            </div>
+            <div class="form-group" id="password">
+                <label >Password </label>
+                <input type="text" class="form-control" name="password"  required>
+            </div>
+             <div class="form-group" id="name">
+                <label >Name </label>
+                <input type="text" class="form-control" name="Name" required>
+            </div>
+             <div class="form-group" id="phone">
+                <label >Phone </label>
+                <input type="text" class="form-control" name="phone" >
+            </div>
+             <div class="form-group" id="address">
+                <label >Address </label>
+                <input type="text" class="form-control" name="address" required>
+            </div>
+             <div class="form-group" id="skills">
+                <label >Skills </label>
+                <input type="text" class="form-control" name="skills" required>
+            </div>
+             <div class="form-group" id="education">
+                <label >Education </label>
+                <input type="text" class="form-control" name="education" required>
+            </div>
+             <div class="form-group">
+                <label >Certifications </label>
+                <input type="text" class="form-control" name="certifications"required>
+            </div>
+            <input type="submit" class="btn" value="Register">
+
+        </form>
+    </div>
+
+</body>
+</html>
