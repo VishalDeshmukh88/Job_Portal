@@ -1,6 +1,6 @@
 """
 Auhtor: Vishal Deshmukh
-Program:Web using oauth and sqlite3 db
+Program:Web app using oauth and sqlite3 db
 """
 
 from flask import Flask, redirect,request, url_for, session,render_template
